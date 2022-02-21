@@ -89,23 +89,7 @@ body {
     font-size: 1.44em;
 }
 
-.weather-by-hour {
-    display: none;
-    width: 100%;
-  }
-  
-@media screen and (min-width: 700px) {
-    .weather-by-hour {
-        display: block;
-    }
-}
-  
-.weather-by-hour__container {
-    display: flex;
-    justify-content: space-between;
-}
-  
-.weather-by-hour__heading,
+
 .next-5-days__heading {
     color: var(--secondColor);
     font-size: 1em;
@@ -114,37 +98,11 @@ body {
 }
   
 @media screen and (min-width: 768px) {
-    .weather-by-hour__heading,
     .next-5-days__heading {
         font-size: 1.125em;
     }
 }
   
-.weather-by-hour__item {
-    padding: 0.8em 0;
-    width: 13%;
-    border-radius: 5px;
-    background-color: rgba(0,0,0,0.15);
-    font-size: 1.125em;
-    text-align: center;
-}
-  
-@media screen and (min-width: 880px) {
-    .weather-by-hour__item {
-        width: 6.05em;
-    }
-}
-  
-.weather-by-hour__hour {
-    margin-bottom: 0.5em;
-}
-
-@media screen and (min-width: 768px) {
-  .weather-by-hour {
-    display: block;
-  }
-}
-
 @media screen and (min-width: 768px) {
     .current-temperature,
     .current-stats {
