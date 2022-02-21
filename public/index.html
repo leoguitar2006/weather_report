@@ -15,8 +15,18 @@
 <body>
     <main class="main-container">
         <div class="location-and-date">
-            <h1 class="location-and-date__location">London, UK</h1>
-            <div>Sunday 4th August</div>
+            <div class="location-and-date__container">
+                <h1 class="location-and-date__location">London, UK</h1>
+                <div>Sunday 4th August</div>
+            </div>
+            <div class="find-city">
+                <input type="text" class="find-city__input" placeholder="Digite a Cidade...">
+                <button class="find-city__button">
+                    <svg class="svg-icon" viewBox="0 0 20 20">
+                        <path d="M18.125,15.804l-4.038-4.037c0.675-1.079,1.012-2.308,1.01-3.534C15.089,4.62,12.199,1.75,8.584,1.75C4.815,1.75,1.982,4.726,2,8.286c0.021,3.577,2.908,6.549,6.578,6.549c1.241,0,2.417-0.347,3.44-0.985l4.032,4.026c0.167,0.166,0.43,0.166,0.596,0l1.479-1.478C18.292,16.234,18.292,15.968,18.125,15.804 M8.578,13.99c-3.198,0-5.716-2.593-5.733-5.71c-0.017-3.084,2.438-5.686,5.74-5.686c3.197,0,5.625,2.493,5.64,5.624C14.242,11.548,11.621,13.99,8.578,13.99 M16.349,16.981l-3.637-3.635c0.131-0.11,0.721-0.695,0.876-0.884l3.642,3.639L16.349,16.981z"></path>
+                    </svg>    
+                </button>
+            </div>
         </div>
 
         <div class="current-temperature">
@@ -55,159 +65,8 @@
         <div class="next-5-days">
             <h2 class="next-5-days__heading">Próximos cinco dias</h2>
             <div class="next-5-days__container">
-                <!-- <div class="next-5-days__row">
-                    <div class="next-5-days__date">
-                        Tue
-                        <div class="next-5-days__label">30/07</div>
-                    </div>
-
-                    <div class="next-5-days__low">
-                        10&deg;
-                        <div class="next-5-days__label">Mínima</div>
-                    </div>
-              
-                    <div class="next-5-days__high">
-                        21&deg;
-                        <div class="next-5-days__label">Máxima</div>
-                    </div>
-            
-                    <div class="next-5-days__icon">
-                        <img src="../src/images/rain cloud.svg" alt="Sunny">
-                    </div>
-                </div>
-                <div class="next-5-days__row">
-                    <div class="next-5-days__date">
-                        Tue
-                        <div class="next-5-days__label">30/07</div>
-                    </div>
-
-                    <div class="next-5-days__low">
-                        10&deg;
-                        <div class="next-5-days__label">Low</div>
-                    </div>
-              
-                    <div class="next-5-days__high">
-                        21&deg;
-                        <div class="next-5-days__label">High</div>
-                    </div>
-            
-                    <div class="next-5-days__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-cloud-rain-heavy" viewBox="0 0 16 16">
-                            <path d="M4.176 11.032a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 1 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 1 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 1 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 0 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm.229-7.005a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 10H13a3 3 0 0 0 .405-5.973zM8.5 1a4 4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1 0 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4.002 4.002 0 0 1 8.5 1z"/>
-                        </svg>
-                    </div>
-            
-                    <div class="next-5-days__rain">
-                        0%
-                        <div class="next-5-days__label">Rain</div>
-                    </div>
-            
-                    <div class="next-5-days__wind">
-                        12mph
-                        <div class="next-5-days__label">Wind</div>
-                    </div>
-
-                </div>
-                <div class="next-5-days__row">
-                    <div class="next-5-days__date">
-                        Tue
-                        <div class="next-5-days__label">30/07</div>
-                    </div>
-
-                    <div class="next-5-days__low">
-                        10&deg;
-                        <div class="next-5-days__label">Low</div>
-                    </div>
-              
-                    <div class="next-5-days__high">
-                        21&deg;
-                        <div class="next-5-days__label">High</div>
-                    </div>
-            
-                    <div class="next-5-days__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-cloud-rain-heavy" viewBox="0 0 16 16">
-                            <path d="M4.176 11.032a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 1 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 1 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 1 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 0 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm.229-7.005a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 10H13a3 3 0 0 0 .405-5.973zM8.5 1a4 4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1 0 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4.002 4.002 0 0 1 8.5 1z"/>
-                        </svg>
-                    </div>
-            
-                    <div class="next-5-days__rain">
-                        0%
-                        <div class="next-5-days__label">Rain</div>
-                    </div>
-            
-                    <div class="next-5-days__wind">
-                        12mph
-                        <div class="next-5-days__label">Wind</div>
-                    </div>
-
-                </div>
-                <div class="next-5-days__row">
-                    <div class="next-5-days__date">
-                        Tue
-                        <div class="next-5-days__label">30/07</div>
-                    </div>
-
-                    <div class="next-5-days__low">
-                        10&deg;
-                        <div class="next-5-days__label">Low</div>
-                    </div>
-              
-                    <div class="next-5-days__high">
-                        21&deg;
-                        <div class="next-5-days__label">High</div>
-                    </div>
-            
-                    <div class="next-5-days__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-cloud-rain-heavy" viewBox="0 0 16 16">
-                            <path d="M4.176 11.032a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 1 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 1 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 1 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 0 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm.229-7.005a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 10H13a3 3 0 0 0 .405-5.973zM8.5 1a4 4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1 0 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4.002 4.002 0 0 1 8.5 1z"/>
-                        </svg>
-                    </div>
-            
-                    <div class="next-5-days__rain">
-                        0%
-                        <div class="next-5-days__label">Rain</div>
-                    </div>
-            
-                    <div class="next-5-days__wind">
-                        12mph
-                        <div class="next-5-days__label">Wind</div>
-                    </div>
-
-                </div>
-                <div class="next-5-days__row">
-                    <div class="next-5-days__date">
-                        Tue
-                        <div class="next-5-days__label">30/07</div>
-                    </div>
-
-                    <div class="next-5-days__low">
-                        10&deg;
-                        <div class="next-5-days__label">Low</div>
-                    </div>
-              
-                    <div class="next-5-days__high">
-                        21&deg;
-                        <div class="next-5-days__label">High</div>
-                    </div>
-            
-                    <div class="next-5-days__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-cloud-rain-heavy" viewBox="0 0 16 16">
-                            <path d="M4.176 11.032a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 1 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 1 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 1 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 0 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm.229-7.005a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 10H13a3 3 0 0 0 .405-5.973zM8.5 1a4 4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1 0 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4.002 4.002 0 0 1 8.5 1z"/>
-                        </svg>
-                    </div>
-            
-                    <div class="next-5-days__rain">
-                        0%
-                        <div class="next-5-days__label">Rain</div>
-                    </div>
-            
-                    <div class="next-5-days__wind">
-                        12mph
-                        <div class="next-5-days__label">Wind</div>
-                    </div>
-
-                </div> -->
-            </div>
+                <!-- Dinamic Info -->
+             </div>
         </div>      
     </main>
     <!-- Scripts -->

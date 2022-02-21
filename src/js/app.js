@@ -5,8 +5,9 @@ const URL_DEFAULT = `${URL_BASE}&user_ip=remote`;
 
 
 //HTML Elements
+const mainContainerEl = document.querySelector('.main-container');
 const locationEl = document.querySelector('.location-and-date__location');
-const todayEl = document.querySelector('.location-and-date div');
+const todayEl = document.querySelector('.location-and-date div div');
 const tempValueEl = document.querySelector('.current-temperature__value');
 const tempSummaryEl = document.querySelector('.current-temperature__summary');
 
@@ -21,7 +22,11 @@ const currentIcon = document.querySelector('.current-temperature__icon');
 
 const next5DaysContainerEl = document.querySelector('.next-5-days__container');
 
+const findInputEl = document.querySelector('.find-city__input');
+const findButtonEl = document.querySelector('.find-city__button');
 
+
+//Functions
 const getHour = () => {
     const date = new Date();
     const hour = date.getHours(); 
@@ -30,19 +35,19 @@ const getHour = () => {
 }
 
 const getIconForecast = (description, hour) => ({
-    'Tempestade forte' : "../src/images/thunder cloud.svg", 
-    'Tempestade tropical': (hour >= 18 && hour < 6) ? "../src/images/night raining cloud.svg" : "../src/images/sun cloudly raining.svg",
+    'Tempestade forte' : "../src/images/thunder_cloud.svg", 
+    'Tempestade tropical': (hour >= 18 && hour < 6) ? "../src/images/night_raining_cloud.svg" : "../src/images/sun_cloudly_raining.svg",
     'Furacão': "../src/images/wind.svg",
-    'Tempestades severas' : "../src/images/thunder cloud.svg", 
-    'Tempestades' : "../src/images/thunder cloud.svg", 
+    'Tempestades severas' : "../src/images/thunder_cloud.svg", 
+    'Tempestades' : "../src/images/thunder_cloud.svg", 
     'Misto de neve e chuva' : "../src/images/snowing.svg", 
     'Misto chuva e gelo' : "../src/images/snowing.svg", 
     'Misto neve e gelo' : "../src/images/snowing.svg", 
-    'Geada fina' : "../src/images/foggy cloud.svg",
-    'Chuviscos' : (hour >= 18 && hour < 6) ? "../src/images/night raining cloud.svg" : "../src/images/sun cloudly raining.svg",
+    'Geada fina' : "../src/images/foggy_cloud.svg",
+    'Chuviscos' : (hour >= 18 && hour < 6) ? "../src/images/night_raining_cloud.svg" : "../src/images/sun_cloudly_raining.svg",
     'Congelamento chuva' : "../src/images/snowing.svg",  
-    'Alguns chuviscos' : (hour >= 18 && hour < 6) ? "../src/images/night raining cloud.svg" : "../src/images/sun cloudly raining.svg",
-    'Alguns chuviscos' : (hour >= 18 && hour < 6) ? "../src/images/night raining cloud.svg" : "../src/images/sun cloudly raining.svg",
+    'Alguns chuviscos' : (hour >= 18 && hour < 6) ? "../src/images/night_raining_cloud.svg" : "../src/images/sun_cloudly_raining.svg",
+    'Alguns chuviscos' : (hour >= 18 && hour < 6) ? "../src/images/night_raining_cloud.svg" : "../src/images/sun_cloudly_raining.svg",
     'Neve baixa' : "../src/images/snow.svg",
     'Tempestade com neve' : "../src/images/snow.svg",
     'Ventania com neve' : "../src/images/wind.svg",
@@ -50,35 +55,35 @@ const getIconForecast = (description, hour) => ({
     'Granizo' : "../src/images/snowing.svg", 
     'Gelo' : "../src/images/snow.svg",
     'Poeira' : "../src/images/wind.svg",
-    'Neblina'  : "../src/images/foggy cloud.svg",
+    'Neblina'  : "../src/images/foggy_cloud.svg",
     'Tempestade de areia' : "../src/images/wind.svg",
     'Fumacento' : "../src/images/foggy.svg", 
     'Vento acentuado' : "../src/images/wind.svg",
     'Ventania' : "../src/images/wind.svg",
-    'Tempo frio':  "../src/images/snow cloudly.svg", 
+    'Tempo frio':  "../src/images/snow_cloudly.svg", 
     'Tempo nublado' : "../src/images/cloud.svg", 
     'Tempo limpo' : (hour >= 18 && hour < 6) ? "../src/images/moon.svg" : "../src/images/sunny.svg",
     'Tempo nublado' : "../src/images/cloud.svg", 
-    'Parcialmente nublado' : (hour >= 18 && hour < 6) ? "../src/images/moon cloud.svg" : "../src/images/sunny cloud.svg",
-    'Parcialmente nublado' : (hour >= 18 && hour < 6) ? "../src/images/moon cloud.svg" : "../src/images/sunny cloud.svg",
+    'Parcialmente nublado' : (hour >= 18 && hour < 6) ? "../src/images/moon_cloud.svg" : "../src/images/sunny_cloud.svg",
+    'Parcialmente nublado' : (hour >= 18 && hour < 6) ? "../src/images/moon_cloud.svg" : "../src/images/sunny_cloud.svg",
     'Tempo limpo' : (hour >= 18 && hour < 6) ? "../src/images/moon.svg" : "../src/images/sunny.svg",
     'Ensolarado' : (hour >= 18 && hour < 6) ? "../src/images/moon.svg" : "../src/images/sunny.svg",
     'Estrelado' : (hour >= 18 && hour < 6) ? "../src/images/moon.svg" : "../src/images/sunny.svg",
-    'Ensolarado com muitas nuvens' : (hour >= 18 && hour < 6) ? "../src/images/moon cloud.svg" : "../src/images/sunny cloud.svg",
+    'Ensolarado com muitas nuvens' : (hour >= 18 && hour < 6) ? "../src/images/moon_cloud.svg" : "../src/images/sunny_cloud.svg",
     'Misto chuva e granizo' : "../src/images/snowing.svg",  
     'Ar quente' : (hour >= 18 && hour < 6) ? "../src/images/moon.svg" : "../src/images/sunny.svg",
-    'Tempestades isoladas' : "../src/images/thunder cloud.svg", 
+    'Tempestades isoladas' : "../src/images/thunder_cloud.svg", 
     'Trovoadas dispersas' : "../src/images/thunder.svg",
     'Trovoadas dispersas' : "../src/images/thunder.svg",
-    'Chuvas esparsas' : (hour >= 18 && hour < 6) ? "../src/images/night raining cloud.svg" : "../src/images/sun cloudly raining.svg",
+    'Chuvas esparsas' : (hour >= 18 && hour < 6) ? "../src/images/night_raining_cloud.svg" : "../src/images/sun_cloudly_raining.svg",
     'Pesados neve' : "../src/images/snow.svg",
-    'Chuviscos com neve' : "../src/images/rain cloud.svg", 
+    'Chuviscos com neve' : "../src/images/rain_cloud.svg", 
     'Neve pesada' : "../src/images/snow.svg",
-    'Sol com poucas nuvens' : (hour >= 18 && hour < 6) ? "../src/images/moon cloud.svg" : "../src/images/sunny cloud.svg",
-    'Chuva' : "../src/images/rain cloud.svg", 
+    'Sol com poucas nuvens' : (hour >= 18 && hour < 6) ? "../src/images/moon_cloud.svg" : "../src/images/sunny_cloud.svg",
+    'Chuva' : "../src/images/rain.svg", 
     'Queda de neve' : "../src/images/snow.svg",
-    'Tempestades isoladas' : "../src/images/thunder cloud.svg"
-})[description] || 'Não foi possivel obter as informações';
+    'Tempestades isoladas' : "../src/images/thunder_cloud.svg"
+})[description] || '../src/images/cloud.svg';
 
 const getConvertedDate = (newDate, newTime) => {
     const formatDate = `${newDate.split('/')[2]}-${newDate.split('/')[1]}-${newDate.split('/')[0]}`;
@@ -99,9 +104,10 @@ const getDateInFull = (newDate, newTime) => {
 
 const getNextDays = (weatherData) => {
     const nextDays = weatherData.forecast;   
+    next5DaysContainerEl.innerHTML = '';
 
     nextDays.forEach((forecastDay, index) => {
-        if (index > 0 && index <= 5) {
+        if (index > 0 && index <= 5) {            
             let rowDayEl = document.createElement('div');
             rowDayEl.classList.add('next-5-days__row');
             rowDayEl.innerHTML = ` <div class="next-5-days__date">
@@ -119,7 +125,7 @@ const getNextDays = (weatherData) => {
                                     <div class="next-5-days__icon">
                                         <img src=${getIconForecast(forecastDay.description, getHour())} alt="">
                                     </div>`
-            next5DaysContainerEl.insertAdjacentElement('afterend',rowDayEl);
+            next5DaysContainerEl.appendChild(rowDayEl);
         }
     })
 }
@@ -154,12 +160,24 @@ const updateCurrentIcon = ({ description }) => {
     currentIcon.setAttribute('src', getIconForecast(description, getHour()));
 }
 
-const getInitialWeather = async () => {
+const getUrl = (city = '') => {
+    if (city === '') {
+        return URL_DEFAULT;
+    } else {
+        return `${URL_BASE}&city_name=${city}`;
+    }
+}
+
+const fetchWeather = async (url) => {
     try {
-        console.log(URL_DEFAULT);
-        const response = await fetch(URL_DEFAULT);
+        mainContainerEl.style.display = 'none';
+        const response = await fetch(url);
         const results = await response.json();
-        const weatherData = results.results;      
+        const weatherData = results.results;  
+        
+        if (weatherData) {
+            mainContainerEl.style.display = 'flex';
+        }
 
         updateLocation(weatherData);
         updateTemp(weatherData);
@@ -167,8 +185,21 @@ const getInitialWeather = async () => {
         updateCurrentIcon(weatherData);
         getNextDays(weatherData);
     } catch (err) {
-        console.log(err.message);
+        alert(err.message);
     }
 }
 
-getInitialWeather();
+const init = () => {
+    fetchWeather(getUrl());
+}
+
+//Eventos
+findButtonEl.addEventListener('click', () => fetchWeather(getUrl(findInputEl.value)));
+findInputEl.addEventListener('keydown', e => {
+    if (e.key.toString() == 'Enter') {
+        fetchWeather(getUrl(e.target.value));
+    }
+})
+
+//Inicio Script
+init();

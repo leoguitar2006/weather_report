@@ -30,11 +30,58 @@ body {
 
 .location-and-date {
     width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+    .location-and-date {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+}
+
+.location-and-date__container {
+    width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .location-and-date__container {
+        margin-bottom: 0.5rem;
+    }    
+}
 .location-and-date__location {
     font-size: 2em;
     font-weight: 600;
+}
+
+.find-city {
+    display: flex;
+    align-items: stretch;
+}
+
+.find-city__input {
+    font-size: 1em;   
+
+    padding: 0.5em;
+    margin-right: 0.25rem;
+    border-radius: 5px;
+}
+
+.find-city__button {
+    height: 3.25em;
+    width: 3.25em;
+
+    border-radius: 5px;
+    cursor: pointer;
+
+    background-color: var(--secondColor);
 }
 
 .current-temperature {  
