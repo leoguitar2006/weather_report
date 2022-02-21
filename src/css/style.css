@@ -45,7 +45,7 @@ body {
     
 .current-temperature__icon-container {
     flex-grow: 1.25;  
-    text-align: center;  
+    text-align: center; 
 }  
 
 .current-temperature__content-container { 
@@ -53,11 +53,30 @@ body {
     text-align: center;  
 }  
 
+.current-temperature__icon {  
+    width: 10.5em;  
+} 
 
 .current-temperature__value {  
     font-size: 5.25em;  
     font-weight: 300;  
-}  
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+} 
+
+.current_temperature__celsius {
+    font-size: 3.8rem;
+    font-weight: 400;
+    height: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    padding-top: 0.60rem;
+    padding-left: 0.15rem;
+}
 
 .current-temperature__summary {  
     margin-top: -0.5em;  
